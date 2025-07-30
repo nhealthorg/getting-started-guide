@@ -1,0 +1,24 @@
+{
+	"name": "getting-started-guide",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "nuxi dev",
+		"build": "nuxi build",
+		"preview": "nuxi preview"
+	},
+	"dependencies": {
+		"@nhealth/admin": "0.0.43",
+		"@nhealth/app": "0.0.43",
+		"@nuxt/content": "3.6.3",
+		"@nuxt/ui": "3.3.0",
+		"better-sqlite3": "12.2.0",
+		"nuxt": "4.0.2"
+	},
+	"devDependencies": {
+		"@nuxt/eslint": "1.7.1",
+		"@types/better-sqlite3": "7.6.13",
+		"typescript": "5.8.3"
+	},
+	"packageManager": "yarn@4.9.2"
+}

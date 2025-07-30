@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:15
+    container_name: hapi-db
+    restart: always
+    environment:
+      POSTGRES_USER: hapi
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: hapi
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - hapidb:/var/lib/postgresql/data
+    command: -p 6432
+    healthcheck:
+      test: pg_isready -U hapi -p 6432
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    expose:
+      - '6432'
+  hapi:
+    image: hapiproject/hapi:v8.2.0-2
+    container_name: hapi-server
+    ports:
+      - "8080:8080"
+    configs:
+      - source: hapi
+        target: /app/config/application.yaml
+    depends_on:
+      db:
+        condition: service_healthy
+configs:
+  hapi:
+    file: ./hapi/application.yaml
+volumes:
+  hapidb:

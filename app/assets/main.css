@@ -1,0 +1,8 @@
+@source "../../node_modules/@nhealth/admin";
+@source "../../node_modules/@nhealth/app";
+@source "../../node_modules/fhir";
+@source "../../content/**/*";
+@source "../../node_modules/docus/app/**/*";
+
+@import "tailwindcss";
+@import "@nuxt/ui";
