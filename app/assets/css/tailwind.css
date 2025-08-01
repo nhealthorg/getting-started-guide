@@ -1,0 +1,10 @@
+@source "../../../node_modules/@nhealth/admin/**/*";
+@source "../../../node_modules/@nhealth/app/**/*";
+@source "../../../node_modules/fhir/**/*";
+
+
+/* Getting Started Guide Styles */
+@source '../../../getting-started/**/*';
+
+@import "tailwindcss";
+@import "@nuxt/ui-pro";

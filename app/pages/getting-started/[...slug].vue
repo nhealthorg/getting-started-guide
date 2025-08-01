@@ -1,3 +1,12 @@
+<template>
+  <UPage v-if="page" class="px-8 py-8">
+    <UPageBody>
+      <ContentRenderer
+        :value="page"
+      />
+    </UPageBody>
+  </UPage>
+</template>
 <script setup lang="ts">
 const route = useRoute()
 
@@ -9,10 +18,3 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 </script>
-
-<template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
-</template>

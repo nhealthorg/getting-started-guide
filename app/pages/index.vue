@@ -1,5 +1,3 @@
 <template>
-	<div>
-		Hello nHealth FHIR World!
-	</div>
+	nHealth Hello FHIR
 </template>
